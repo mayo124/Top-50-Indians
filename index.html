@@ -5,84 +5,209 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Impact Ranking Methodology</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; padding: 20px; background-color: #f4f4f4; }
+    h1 { text-align: center; }
+    table { width: 100%; border-collapse: collapse; background: #fff; }
+    th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+    th { background-color: #333; color: #fff; }
+    .container { max-width: 900px; margin: auto; }
+    .tooltip { position: relative; display: inline-block; cursor: pointer; }
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 300px;
+      background-color: #333;
+      color: #fff;
+      text-align: left;
+      border-radius: 5px;
+      padding: 10px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%; /* Position above the text */
+      left: 50%;
+      margin-left: -150px; /* Center the tooltip */
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
 </head>
 <body>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Most Impactful Indians</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; padding: 20px; background-color: #f4f4f4; }
-        h1 { text-align: center; }
-        table { width: 100%; border-collapse: collapse; background: #fff; }
-        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
-        th { background-color: #333; color: #fff; }
-        .container { max-width: 900px; margin: auto; }
-    </style>
-</head>
-  
-    <div class="container">
-        <h1>Top Most Impactful Indians</h1>
-        <table>
-            <tr>
-                <th>Rank</th>
-                <th>Name</th>
-                <th>Final Score</th>
-            </tr>
-            <tr><td>1</td><td>B.R. Ambedkar</td><td>9.765</td></tr>
-            <tr><td>2</td><td>Shivaji Maharaj</td><td>9.6</td></tr>
-            <tr><td>3</td><td>C.V. Raman</td><td>9.545</td></tr>
-            <tr><td>4</td><td>A.P.J. Abdul Kalam</td><td>9.545</td></tr>
-            <tr><td>5</td><td>Homi Bhabha</td><td>9.535</td></tr>
-            <tr><td>6</td><td>M. Visvesvaraya</td><td>9.515</td></tr>
-            <tr><td>7</td><td>Aryabhata</td><td>9.505</td></tr>
-            <tr><td>8</td><td>Srinivasa Ramanujan</td><td>9.505</td></tr>
-            <tr><td>9</td><td>Jagadish Chandra Bose</td><td>9.49</td></tr>
-            <tr><td>10</td><td>Sardar Vallabhbhai Patel</td><td>9.485</td></tr>
-            <tr><td>11</td><td>Vikram Sarabhai</td><td>9.485</td></tr>
-            <tr><td>12</td><td>Satyendra Nath Bose</td><td>9.46</td></tr>
-            <tr><td>13</td><td>M.S. Swaminathan</td><td>9.43</td></tr>
-            <tr><td>14</td><td>Verghese Kurien</td><td>9.415</td></tr>
-            <tr><td>15</td><td>Subhas Chandra Bose</td><td>9.405</td></tr>
-            <tr><td>16</td><td>Jamsetji Tata</td><td>9.4</td></tr>
-            <tr><td>17</td><td>Rabindranath Tagore</td><td>9.365</td></tr>
-            <tr><td>18</td><td>Bhagat Singh</td><td>9.36</td></tr>
-            <tr><td>19</td><td>Narendra Modi</td><td>9.325</td></tr>
-            <tr><td>20</td><td>Sam Manekshaw</td><td>9.315</td></tr>
-            <tr><td>21</td><td>Lata Mangeshkar</td><td>9.315</td></tr>
-            <tr><td>22</td><td>J.R.D. Tata</td><td>9.305</td></tr>
-            <tr><td>23</td><td>Sachin Tendulkar</td><td>9.305</td></tr>
-            <tr><td>24</td><td>E. Sreedharan</td><td>9.305</td></tr>
-            <tr><td>25</td><td>Ratan Tata</td><td>9.285</td></tr>
-            <tr><td>26</td><td>Dr. B.C. Roy</td><td>9.225</td></tr>
-            <tr><td>27</td><td>Dr. Devi Shetty</td><td>9.2</td></tr>
-            <tr><td>28</td><td>Manmohan Singh</td><td>9.195</td></tr>
-            <tr><td>29</td><td>A.R. Rahman</td><td>9.18</td></tr>
-            <tr><td>30</td><td>Dhyan Chand</td><td>9.165</td></tr>
-            <tr><td>31</td><td>Dhirubhai Ambani</td><td>9.145</td></tr>
-            <tr><td>32</td><td>Narayan Murthy</td><td>9.13</td></tr>
-            <tr><td>33</td><td>Salim Ali</td><td>9.12</td></tr>
-            <tr><td>34</td><td>P.V. Narasimha Rao</td><td>9.115</td></tr>
-            <tr><td>35</td><td>Mary Kom</td><td>9.115</td></tr>
-            <tr><td>36</td><td>Sonam Wangchuk</td><td>9.09</td></tr>
-            <tr><td>37</td><td>Vikram Batra</td><td>9.08</td></tr>
-            <tr><td>38</td><td>V. Shanta</td><td>9.05</td></tr>
-            <tr><td>39</td><td>Rahul Dravid</td><td>9.05</td></tr>
-            <tr><td>40</td><td>P.T. Usha</td><td>9.035</td></tr>
-            <tr><td>41</td><td>Sunderlal Bahuguna</td><td>9.035</td></tr>
-            <tr><td>42</td><td>K. Kamaraj</td><td>9.025</td></tr>
-            <tr><td>43</td><td>Birsa Munda</td><td>9.025</td></tr>
-            <tr><td>44</td><td>Kiran Mazumdar-Shaw</td><td>9.02</td></tr>
-            <tr><td>45</td><td>Rajnikanth</td><td>9.0</td></tr>
-            <tr><td>46</td><td>Medha Patkar</td><td>8.97</td></tr>
-            <tr><td>47</td><td>R.K. Laxman</td><td>8.965</td></tr>
-            <tr><td>48</td><td>Biju Patnaik</td><td>8.88</td></tr>
-            <tr><td>49</td><td>Rajendra Prasad</td><td>8.87</td></tr>
-            <tr><td>50</td><td>M.F. Husain</td><td>8.86</td></tr>
-        </table>
-    </div>
-
+  <div class="container">
+    <h1>Top Most Impactful Indians</h1>
+    <table>
+      <tr>
+        <th>Rank</th>
+        <th>Name</th>
+        <th>Final Score</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td><div class="tooltip">Mahatma Gandhi<span class="tooltiptext">
+          <strong>National/Global Impact:</strong> 30 (Led independence movement, global icon of non-violence)<br>
+          <strong>Longevity:</strong> 20 (Still revered, principles followed worldwide)<br>
+          <strong>Economic/Social:</strong> 18 (Social impact through independence, economic less direct)<br>
+          <strong>Innovation:</strong> 15 (Non-violent resistance as a political tool)<br>
+          <strong>Influence:</strong> 15 (Global recognition)<br>
+          <strong>Total:</strong> 30+20+18+15+15 = 98
+        </span></div></td>
+        <td>98</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><div class="tooltip">B.R. Ambedkar<span class="tooltiptext">
+          <strong>National Impact:</strong> 30 (Architect of Constitution, champion of social justice)<br>
+          <strong>Longevity:</strong> 20 (Constitution still in place, ongoing relevance)<br>
+          <strong>Economic/Social:</strong> 20 (Fought caste discrimination, direct social impact)<br>
+          <strong>Innovation:</strong> 14 (Legal frameworks for equality)<br>
+          <strong>Influence:</strong> 14 (Highly respected, especially among Dalits)<br>
+          <strong>Total:</strong> 30+20+20+14+14 = 98
+        </span></div></td>
+        <td>98</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><div class="tooltip">Jawaharlal Nehru<span class="tooltiptext">
+          <strong>National Impact:</strong> 28 (First PM, shaped modern India)<br>
+          <strong>Longevity:</strong> 18 (Institutions like IITs, AIIMS still exist)<br>
+          <strong>Economic:</strong> 15 (Mixed economic policies, socialist approach)<br>
+          <strong>Innovation:</strong> 12 (Non-aligned movement, secularism)<br>
+          <strong>Influence:</strong> 14 (Respected globally during his time)<br>
+          <strong>Total:</strong> 28+18+15+12+14 = 87
+        </span></div></td>
+        <td>87</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><div class="tooltip">Sardar Vallabhbhai Patel<span class="tooltiptext">
+          <strong>National Impact:</strong> 27 (Unified India by integrating princely states)<br>
+          <strong>Longevity:</strong> 19 (India's territorial integrity)<br>
+          <strong>Economic/Social:</strong> 16 (Unity crucial for economic development)<br>
+          <strong>Innovation:</strong> 13 (Diplomatic and administrative tactics)<br>
+          <strong>Influence:</strong> 13 (Respected, but less than Nehru/Gandhi)<br>
+          <strong>Total:</strong> 27+19+16+13+13 = 88
+        </span></div></td>
+        <td>88</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><div class="tooltip">Rabindranath Tagore<span class="tooltiptext">
+          <strong>National Impact:</strong> 25 (Nobel laureate, composed national anthems)<br>
+          <strong>Longevity:</strong> 18 (Works still celebrated)<br>
+          <strong>Economic/Social:</strong> 14 (Cultural impact, not direct economic)<br>
+          <strong>Innovation:</strong> 15 (Literary and educational contributions)<br>
+          <strong>Influence:</strong> 15 (Global literary figure)<br>
+          <strong>Total:</strong> 25+18+14+15+15 = 87
+        </span></div></td>
+        <td>87</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td><div class="tooltip">A.P.J. Abdul Kalam<span class="tooltiptext">
+          <strong>National Impact:</strong> 24 (Missile man, President)<br>
+          <strong>Longevity:</strong> 17 (Defense tech remains important)<br>
+          <strong>Economic:</strong> 14 (Indirect through technology)<br>
+          <strong>Innovation:</strong> 15 (Developed missile systems)<br>
+          <strong>Influence:</strong> 15 (Youth icon, highly respected)<br>
+          <strong>Total:</strong> 24+17+14+15+15 = 85
+        </span></div></td>
+        <td>85</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td><div class="tooltip">Indira Gandhi<span class="tooltiptext">
+          <strong>National Impact:</strong> 26 (PM during pivotal moments)<br>
+          <strong>Longevity:</strong> 15 (Green Revolution, 1971 war)<br>
+          <strong>Economic:</strong> 16 (Green Revolution boosted agriculture)<br>
+          <strong>Innovation:</strong> 12 (Strong central leadership)<br>
+          <strong>Influence:</strong> 13 (Controversial but influential)<br>
+          <strong>Total:</strong> 26+15+16+12+13 = 82
+        </span></div></td>
+        <td>82</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td><div class="tooltip">Dhirubhai Ambani<span class="tooltiptext">
+          <strong>National Impact:</strong> 22 (Revolutionized Indian business)<br>
+          <strong>Longevity:</strong> 18 (Reliance remains a major company)<br>
+          <strong>Economic:</strong> 20 (Transformed industries)<br>
+          <strong>Innovation:</strong> 14 (Business strategies)<br>
+          <strong>Influence:</strong> 13 (Inspired entrepreneurs)<br>
+          <strong>Total:</strong> 22+18+20+14+13 = 87
+        </span></div></td>
+        <td>87</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td><div class="tooltip">C.V. Raman<span class="tooltiptext">
+          <strong>National Impact:</strong> 22 (Nobel Prize in Physics)<br>
+          <strong>Longevity:</strong> 17 (Scientific legacy)<br>
+          <strong>Economic:</strong> 12 (Indirect through science)<br>
+          <strong>Innovation:</strong> 15 (Raman Effect)<br>
+          <strong>Influence:</strong> 14 (Inspiration for scientists)<br>
+          <strong>Total:</strong> 22+17+12+15+14 = 80
+        </span></div></td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><div class="tooltip">Homi Bhabha<span class="tooltiptext">
+          <strong>National Impact:</strong> 23 (Nuclear program founder)<br>
+          <strong>Longevity:</strong> 18 (Nuclear energy and research)<br>
+          <strong>Economic:</strong> 15 (Energy infrastructure)<br>
+          <strong>Innovation:</strong> 15 (Pioneered nuclear research)<br>
+          <strong>Influence:</strong> 13 (Scientific community)<br>
+          <strong>Total:</strong> 23+18+15+15+13 = 84
+        </span></div></td>
+        <td>84</td>
+      </tr>
+      <!-- Add the remaining 40 individuals without tooltips -->
+      <tr><td>11</td><td>Mother Teresa</td><td>79</td></tr>
+      <tr><td>12</td><td>Sachin Tendulkar</td><td>71</td></tr>
+      <tr><td>13</td><td>Raja Ram Mohan Roy</td><td>85</td></tr>
+      <tr><td>14</td><td>Swami Vivekananda</td><td>83</td></tr>
+      <tr><td>15</td><td>Narayana Murthy</td><td>83</td></tr>
+      <tr><td>16</td><td>Satyajit Ray</td><td>78</td></tr>
+      <tr><td>17</td><td>Lata Mangeshkar</td><td>78</td></tr>
+      <tr><td>18</td><td>Ratan Tata</td><td>81</td></tr>
+      <tr><td>19</td><td>Vikram Sarabhai</td><td>83</td></tr>
+      <tr><td>20</td><td>Jyotirao Phule</td><td>84</td></tr>
+      <tr><td>21</td><td>Savitribai Phule</td><td>83</td></tr>
+      <tr><td>22</td><td>Amartya Sen</td><td>82</td></tr>
+      <tr><td>23</td><td>Milkha Singh</td><td>65</td></tr>
+      <tr><td>24</td><td>M.S. Swaminathan</td><td>89</td></tr>
+      <tr><td>25</td><td>Kalpana Chawla</td><td>69</td></tr>
+      <tr><td>26</td><td>Azim Premji</td><td>79</td></tr>
+      <tr><td>27</td><td>Birsa Munda</td><td>80</td></tr>
+      <tr><td>28</td><td>Ravi Shankar (Musician)</td><td>76</td></tr>
+      <tr><td>29</td><td>Kiran Bedi</td><td>74</td></tr>
+      <tr><td>30</td><td>Subhas Chandra Bose</td><td>85</td></tr>
+      <tr><td>31</td><td>Srinivasa Ramanujan</td><td>81</td></tr>
+      <tr><td>32</td><td>Aruna Roy</td><td>75</td></tr>
+      <tr><td>33</td><td>Verghese Kurien</td><td>87</td></tr>
+      <tr><td>34</td><td>E. Sreedharan</td><td>80</td></tr>
+      <tr><td>35</td><td>Anand Mahindra</td><td>71</td></tr>
+      <tr><td>36</td><td>Pranab Mukherjee</td><td>69</td></tr>
+      <tr><td>37</td><td>Nandan Nilekani</td><td>79</td></tr>
+      <tr><td>38</td><td>Sania Mirza</td><td>65</td></tr>
+      <tr><td>39</td><td>Sundar Pichai</td><td>74</td></tr>
+      <tr><td>40</td><td>Mary Kom</td><td>66</td></tr>
+      <tr><td>41</td><td>Rani Lakshmibai</td><td>80</td></tr>
+      <tr><td>42</td><td>Salim Ali</td><td>71</td></tr>
+      <tr><td>43</td><td>Jamsetji Tata</td><td>89</td></tr>
+      <tr><td>44</td><td>Medha Patkar</td><td>71</td></tr>
+      <tr><td>45</td><td>Manmohan Singh</td><td>83</td></tr>
+      <tr><td>46</td><td>Anna Hazare</td><td>70</td></tr>
+      <tr><td>47</td><td>Kailash Satyarthi</td><td>78</td></tr>
+      <tr><td>48</td><td>R.K. Laxman</td><td>72</td></tr>
+      <tr><td>49</td><td>Dhyan Chand</td><td>66</td></tr>
+      <tr><td>50</td><td>P.V. Narasimha Rao</td><td>79</td></tr>
+    </table>
+  </div>
 
   <section id="methodology">
     <h2>Methodology: How We Ranked Impact</h2>
